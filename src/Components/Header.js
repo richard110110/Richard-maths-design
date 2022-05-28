@@ -7,7 +7,7 @@ const useStyles = makeStyles({
         width:"100%",
         backgroundColor: "white",
         height:"70px",
-        position: "fixed",
+        position: "static",
     }
 })
 
