@@ -85,9 +85,9 @@ function Home(props) {
     setReply(false);
   };
 
-  const showInfo = (post) => {
-    console.log(post.id);
-    setSelectPost(posts.find(it => it.post === post))
+  const showInfo = (id) => {
+    console.log(id);
+    setSelectPost(posts.find(it => it.id === id))
     setReply(true)
   
   }
@@ -99,6 +99,7 @@ function Home(props) {
       post: post,
       pseudonym: pseudonym,
       voteNo: 0,
+      id: new Date().getUTCMilliseconds(),
     };
 
     const newPosts = [...posts, newPost];
@@ -214,7 +215,7 @@ const voteDown = (index) => {
               </p>
               <KeyboardArrowUpIcon cursor="pointer" onClick={() => voteUp(index)}/>
               <KeyboardArrowDownIcon cursor="pointer" onClick={() => voteDown(index)} />
-              <button className={classes.buttonStyle} onClick={() => showInfo(item.post)}>
+              <button className={classes.buttonStyle} onClick={() => showInfo(item.id)}>
                 Reply
               </button>
              
