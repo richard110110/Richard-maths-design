@@ -13,6 +13,10 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+    
+
 //rgb(114, 18, 240) background color;
 
 const useStyles = makeStyles({
@@ -54,8 +58,14 @@ const useStyles = makeStyles({
   },
 });
 function Home(props) {
+  const [posts, setPosts] = useState([]);
+
+  const [post, setPost] = useState("");
+  const [pseudonym, setPseudonym] = useState("");
+
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [reply, setReply] = useState(false);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -64,19 +74,63 @@ function Home(props) {
     setOpen(false);
   };
 
-  const post = useRef(null);
-  const pseudonym = useRef(null);
+  const handleReplyOpen = (e) => {
+    console.log(e);
+    setReply(true);
+  };
+  // function handleReplyOpen(id) {
+  //     setReply(true);
+  // }
 
-  
+  const handleReplyClose = () => {
+    setReply(false);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(post.current.value + " " + pseudonym.current.value);
+    const newPost = {
+      post: post,
+      pseudonym: pseudonym,
+      voteNo: 0,
+    };
+
+    const newPosts = [...posts, newPost];
+    setPosts(newPosts);
+    setPost("");
+    setPseudonym("");
+    handleClose();
+    // alert("Submit");
   };
+
+  const handlePost = (e) => {
+    setPost(e.target.value);
+  };
+
+  const handlePseudonym = (e) => {
+    setPseudonym(e.target.value);
+  };
+
+  const voteUp = (index) => {
+    const newPosts = [...posts];
+
+    newPosts[index].voteNo++;
+
+    setPosts(newPosts);
+   // calculateTotal();
+};
+
+const voteDown = (index) => {
+    const newPosts = [...posts];
+
+    newPosts[index].voteNo--;
+
+    setPosts(newPosts);
+};
 
   return (
     <>
       <CssBaseline />
+
       <div className={classes.homeStyle}>
         <Header />
         <Grid container spacing={7} className={classes.title}>
@@ -105,20 +159,18 @@ function Home(props) {
         </Grid>
 
         <Dialog open={open} onClose={handleClose}>
-        <form onSubmit={handleSubmit}>
-
-          <DialogContent>
-              {/* <input type="text" required placeholder="post" ref={post} />
-              <input type="text" required placeholder="pseudonym" ref={pseudonym} /> */}
+          <form onSubmit={handleSubmit}>
+            <DialogContent>
               <TextField
                 autoFocus
                 margin="dense"
                 id="post"
                 label="post"
                 type="text"
+                value={post}
                 fullWidth
                 variant="standard"
-                ref={post}
+                onChange={handlePost}
                 required
               />
 
@@ -129,18 +181,63 @@ function Home(props) {
                 label="pseudonym"
                 type="text"
                 fullWidth
+                value={pseudonym}
                 variant="standard"
-                ref={pseudonym}
+                onChange={handlePseudonym}
                 required
               />
-
-          </DialogContent>
-          <DialogActions>
-            <Button type="submit">Post</Button>
-          </DialogActions>
+            </DialogContent>
+            <DialogActions>
+              <Button type="submit">Post</Button>
+            </DialogActions>
           </form>
-
         </Dialog>
+
+        <Typography component={"div"} backgroundColor="white">
+          {posts.map((item, index) => (
+            <div key={index}>
+              <p>
+                {item.post} {item.pseudonym} {item.voteNo}
+              </p>
+              <KeyboardArrowUpIcon cursor="pointer" onClick={() => voteUp(index)}/>
+              <KeyboardArrowDownIcon cursor="pointer" onClick={() => voteDown(index)} />
+              <button className={classes.buttonStyle} onClick={handleReplyOpen}>
+                Reply
+              </button>
+             
+              <Dialog open={reply} onClose={handleReplyClose}>
+                
+                
+                  <DialogContent>
+                    <TextField
+                      autoFocus
+                      margin="dense"
+                      id="post"
+                      label="post"
+                      type="text"
+                      fullWidth
+                      variant="standard"
+                    />
+
+                    <TextField
+                      autoFocus
+                      margin="dense"
+                      id={index}
+                      label="pseudonym"
+                      type="text"
+                      text={item.pseudonym}
+                      value={item.pseudonym}
+                      fullWidth
+                      variant="standard"
+                    />
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleReplyClose}>Post</Button>
+                  </DialogActions>
+              </Dialog>
+            </div>
+          ))}
+        </Typography>
       </div>
     </>
   );
