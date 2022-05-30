@@ -59,6 +59,8 @@ const useStyles = makeStyles({
 });
 function Home(props) {
   const [posts, setPosts] = useState([]);
+  const [selectPost, setSelectPost] = useState({});
+
 
   const [post, setPost] = useState("");
   const [pseudonym, setPseudonym] = useState("");
@@ -74,10 +76,7 @@ function Home(props) {
     setOpen(false);
   };
 
-  const handleReplyOpen = (e) => {
-    console.log(e);
-    setReply(true);
-  };
+
   // function handleReplyOpen(id) {
   //     setReply(true);
   // }
@@ -85,6 +84,14 @@ function Home(props) {
   const handleReplyClose = () => {
     setReply(false);
   };
+
+  const showInfo = (post) => {
+    console.log(post.id);
+    setSelectPost(posts.find(it => it.post === post))
+    setReply(true)
+  
+  }
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -109,7 +116,13 @@ function Home(props) {
   const handlePseudonym = (e) => {
     setPseudonym(e.target.value);
   };
+  const handleReplyOpen = () => {
+    //  console.log(e);
+      //console.log(index);
+    
 
+     setReply(true);
+    };
   const voteUp = (index) => {
     const newPosts = [...posts];
 
@@ -201,7 +214,7 @@ const voteDown = (index) => {
               </p>
               <KeyboardArrowUpIcon cursor="pointer" onClick={() => voteUp(index)}/>
               <KeyboardArrowDownIcon cursor="pointer" onClick={() => voteDown(index)} />
-              <button className={classes.buttonStyle} onClick={handleReplyOpen}>
+              <button className={classes.buttonStyle} onClick={() => showInfo(item.post)}>
                 Reply
               </button>
              
@@ -222,11 +235,11 @@ const voteDown = (index) => {
                     <TextField
                       autoFocus
                       margin="dense"
-                      id={index}
+                      id="pseudonym"
                       label="pseudonym"
                       type="text"
-                      text={item.pseudonym}
-                      value={item.pseudonym}
+                      text={selectPost.pseudonym}
+                      value={selectPost.pseudonym}
                       fullWidth
                       variant="standard"
                     />
