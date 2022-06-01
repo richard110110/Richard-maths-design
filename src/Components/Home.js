@@ -276,8 +276,8 @@ function Home(props) {
                 />
               </div>
               <div className="itemDetail">
-                <p className="postDetail">{item.post}</p>
                 <p className="postPseudoym">{item.pseudonym}</p>
+                <p className="postDetail">{item.post}</p>
                 <button
                   className="replyButton"
                   onClick={() => showInfo(item.id)}
@@ -316,8 +316,8 @@ function Home(props) {
                       className={classes.inputStyle}
                       id="pseudonym"
                       type="text"
-                      text={selectPost.post}
-                      value={selectPost.post}
+                      text={selectPost.pseudonym}
+                      value={selectPost.pseudonym}
                     />
                     <button
                       type="submit"

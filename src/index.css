@@ -60,7 +60,7 @@
     font-size: 18px;
 }
 
-.postDetail {
+.postPseudoym {
     float: left;
     padding-left: 0;
     width: 100%;
@@ -70,7 +70,7 @@
     text-align: left;
 }
 
-.postPseudoym {
+.postDetail {
     margin-top: 10px;
     width: 100%;
     padding-left: 0;
