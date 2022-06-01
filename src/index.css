@@ -59,6 +59,7 @@ body {
     display: flex;
     flex-direction: column;
     color: black;
+    box-shadow: 0px 7px 9px -1px #000000;
 }
 
 .postItem:first-child {
@@ -117,6 +118,7 @@ body {
     font-weight: bold;
     font-size: 18px;
     border-radius: 28px;
+    margin-bottom: 20px;
     /* justify-content: flex-end; */
 }
 
