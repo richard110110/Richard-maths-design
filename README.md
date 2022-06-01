@@ -50,4 +50,4 @@ Chenxi GUO  [Chenxi Portfolio](https://richardguo-portfolio.netlify.app/) <br/>
 Email: chenxiguo1021@gmail.com  <br/>
 phone number: 0451003138
 
-![Chenxi Guo](https://richardguo-portfolio.netlify.app/static/media/chenxiProfile.4040152dea7a012abfef.png)
+
