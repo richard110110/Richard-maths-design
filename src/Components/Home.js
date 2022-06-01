@@ -150,13 +150,7 @@ function Home(props) {
     setReply(true);
   };
 
-  const customStyles = {
-    width: "100%",
-    height: "500px",
-    justifyContent: "center",
-    textalign: "center",
-    alignItems: "center",
-  };
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -182,12 +176,7 @@ function Home(props) {
   const handlePseudonym = (e) => {
     setPseudonym(e.target.value);
   };
-  const handleReplyOpen = () => {
-    //  console.log(e);
-    //console.log(index);
-
-    setReply(true);
-  };
+ 
   const voteUp = (index) => {
     const newPosts = [...posts];
 
@@ -205,7 +194,6 @@ function Home(props) {
     setPosts(newPosts);
   };
 
-  const styles = (theme) => ({});
 
   return (
     <>
