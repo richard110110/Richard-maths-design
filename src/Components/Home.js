@@ -1,21 +1,15 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Button, Typography } from "@mui/material";
+import React, { useState} from "react";
 import { makeStyles } from "@mui/styles";
 import Header from "./Header";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import TextField from "@mui/material/TextField";
+
 import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+
 
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import styles from "./mystyle.module.css";
 
 //rgb(114, 18, 240) background color;
 
