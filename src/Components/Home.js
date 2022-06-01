@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
+//import component
 import Header from "./Header";
+//import mui component
+
+//MUI provides a CssBaseline component to kickstart an elegant, consistent, and simple baseline to build upon.
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 
@@ -10,6 +14,7 @@ import DialogContent from "@mui/material/DialogContent";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
+//style the element
 const useStyles = makeStyles({
   homeStyle: {
     width: "100%",
@@ -114,15 +119,22 @@ const useStyles = makeStyles({
   },
 });
 function Home(props) {
-  const [posts, setPosts] = useState([]);
-  const [selectPost, setSelectPost] = useState({});
+  //start setup the useState
+  const [posts, setPosts] = useState([]); //the state store all the posts
+  const [selectPost, setSelectPost] = useState({}); //the state to store the selectedPost when click reply button
 
-  const [post, setPost] = useState("");
-  const [pseudonym, setPseudonym] = useState("");
+  const [post, setPost] = useState(""); // the state to store the input post
+  const [pseudonym, setPseudonym] = useState(""); // the state to store the input pseudonym
+
+  const [open, setOpen] = useState(false); // the state to store the status of open dialog
+  const [reply, setReply] = useState(false); // the state to store the status of reply dialog
+
+  //end of setup the usestate
 
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
-  const [reply, setReply] = useState(false);
+
+  //set up the function
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -143,13 +155,14 @@ function Home(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //the post data structure, post->post, pseudonym->pseudonym, voteNo->Num, id->dateTime (for ensure the id is unique)
     const newPost = {
       post: post,
       pseudonym: pseudonym,
       voteNo: 0,
       id: new Date().getUTCMilliseconds(),
     };
-
+    //add new post to the posts state, clear the post and pseudonym in the form in dialog
     const newPosts = [...posts, newPost];
     setPosts(newPosts);
     setPost("");
@@ -165,6 +178,8 @@ function Home(props) {
     setPseudonym(e.target.value);
   };
 
+  // vote up for the post, adding the voteNo and update posts
+
   const voteUp = (index) => {
     const newPosts = [...posts];
 
@@ -172,6 +187,8 @@ function Home(props) {
 
     setPosts(newPosts);
   };
+
+  // vote down for the post, adding the voteNo and update posts
 
   const voteDown = (index) => {
     const newPosts = [...posts];
