@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import Header from "./Header";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -7,11 +7,8 @@ import Grid from "@mui/material/Grid";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 
-
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
-//rgb(114, 18, 240) background color;
 
 const useStyles = makeStyles({
   homeStyle: {
@@ -67,7 +64,6 @@ const useStyles = makeStyles({
     borderStyle: "solid",
     borderColor: "rgb(114, 18, 240) !important",
     height: "auto",
-    // marginBottom: "400px",
   },
 
   formStyle: {
@@ -75,7 +71,6 @@ const useStyles = makeStyles({
     flexDirection: "column",
     width: "600px",
     height: "400px",
-    // borderStyle: "solid",
   },
   textareaStyle: {
     paddingLeft: "30px",
@@ -136,10 +131,6 @@ function Home(props) {
     setOpen(false);
   };
 
-  // function handleReplyOpen(id) {
-  //     setReply(true);
-  // }
-
   const handleReplyClose = () => {
     setReply(false);
   };
@@ -149,8 +140,6 @@ function Home(props) {
     setSelectPost(posts.find((it) => it.id === id));
     setReply(true);
   };
-
- 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -166,7 +155,6 @@ function Home(props) {
     setPost("");
     setPseudonym("");
     handleClose();
-    // alert("Submit");
   };
 
   const handlePost = (e) => {
@@ -176,14 +164,13 @@ function Home(props) {
   const handlePseudonym = (e) => {
     setPseudonym(e.target.value);
   };
- 
+
   const voteUp = (index) => {
     const newPosts = [...posts];
 
     newPosts[index].voteNo++;
 
     setPosts(newPosts);
-    // calculateTotal();
   };
 
   const voteDown = (index) => {
@@ -193,7 +180,6 @@ function Home(props) {
 
     setPosts(newPosts);
   };
-
 
   return (
     <>
@@ -229,11 +215,9 @@ function Home(props) {
         <Dialog
           open={open}
           onClose={handleClose}
-          //   style={customStyles}
           sx={{
             "& .MuiDialog-container": {
               "& .MuiPaper-root": {
-                // width: "150%",
                 minWidth: "60%",
                 marginTop: "200px",
                 height: "500px",
@@ -246,23 +230,6 @@ function Home(props) {
         >
           <form onSubmit={handleSubmit}>
             <DialogContent>
-              {/* <TextField
-                autoFocus
-                margin="dense"
-                id="post"
-                label="Write your post ..."
-                type="text"
-                value={post}
-                fullWidth
-                onChange={handlePost}
-                variant="outlined"
-              rows="10"
-                InputProps={{
-                  classes: {
-                    notchedOutline: classes.notchedOutline,
-                  },
-                }}
-              /> */}
               <div width="100%" className={classes.formStyle}>
                 <textarea
                   className={classes.textareaStyle}
@@ -286,22 +253,6 @@ function Home(props) {
                   Post
                 </button>
               </div>
-              {/* <TextField
-                autoFocus
-                margin="dense"
-                id="pseudonym"
-                label="Enter your pseudonym"
-                type="text"
-                fullWidth
-                value={pseudonym}
-                variant="outlined"
-                onChange={handlePseudonym}
-                InputProps={{
-                  classes: {
-                    notchedOutline: classes.notchedOutline,
-                  },
-                }}
-              /> */}
             </DialogContent>
           </form>
         </Dialog>
@@ -341,7 +292,6 @@ function Home(props) {
                 sx={{
                   "& .MuiDialog-container": {
                     "& .MuiPaper-root": {
-                      // width: "150%",
                       minWidth: "60%",
                       marginTop: "200px",
                       height: "500px",
@@ -377,31 +327,7 @@ function Home(props) {
                       Post
                     </button>
                   </div>
-                  {/* <TextField
-                    autoFocus
-                    margin="dense"
-                    id="post"
-                    label="post"
-                    type="text"
-                    fullWidth
-                    variant="standard"
-                  />
-
-                  <TextField
-                    autoFocus
-                    margin="dense"
-                    id="pseudonym"
-                    label="pseudonym"
-                    type="text"
-                    text={selectPost.pseudonym}
-                    value={selectPost.pseudonym}
-                    fullWidth
-                    variant="standard"
-                  /> */}
                 </DialogContent>
-                {/* <DialogActions>
-                  <Button onClick={handleReplyClose}>Post</Button>
-                </DialogActions> */}
               </Dialog>
             </div>
           ))}
