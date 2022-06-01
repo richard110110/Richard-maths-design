@@ -1,3 +1,19 @@
+/**
+css style for container that contain the post
+**/
+
+.container {
+    text-align: center;
+    overflow: auto;
+    min-height: 900px;
+    align-items: center;
+}
+
+
+/**
+*postItem that is column direction that has two columns
+*/
+
 .postItem {
     color: white;
     width: 60%;
@@ -9,6 +25,24 @@
     flex-direction: row;
     justify-content: flex-end;
 }
+
+
+/**
+First and last item have the same width that is larger than another posts
+**/
+
+.postItem:first-child {
+    width: 80%;
+}
+
+.postItem:last-child {
+    width: 80%;
+}
+
+
+/**
+*this is the vote container that contains the up and down vote button and the vote number
+**/
 
 .voteContainer {
     width: auto;
@@ -34,6 +68,21 @@
     color: rgba(240, 248, 255, 0.633);
 }
 
+.voteNo {
+    margin-top: 0;
+    height: auto;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+
+/**end of vote container**/
+
+
+/**
+start of item detail, include three rows that includes post detail, post pseudoym and button
+**/
+
 .itemDetail {
     background-color: white;
     width: 80%;
@@ -43,21 +92,6 @@
     flex-direction: column;
     color: black;
     box-shadow: 0px 7px 9px -1px #000000;
-}
-
-.postItem:first-child {
-    width: 80%;
-}
-
-.postItem:last-child {
-    width: 80%;
-}
-
-.voteNo {
-    margin-top: 0;
-    height: auto;
-    margin-bottom: 0;
-    font-size: 18px;
 }
 
 .postPseudoym {
@@ -101,9 +135,5 @@
     margin-bottom: 20px;
 }
 
-.container {
-    text-align: center;
-    overflow: auto;
-    min-height: 900px;
-    align-items: center;
-}
+
+/**end of item detail**/
