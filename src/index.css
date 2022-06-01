@@ -1,20 +1,8 @@
-.textarea:focus {
-    boxShadow: "3px 4px 10px -2px #000000",
-}
-
-body {
-    /* margin: 0;
-    padding: 0; */
-}
-
 .postItem {
     color: white;
-    /* background-color: yellow; */
     width: 60%;
-    /* height: 500px; */
     position: relative;
     margin: 0 auto;
-    /* margin: 0 auto; */
     margin-top: 40px;
     margin-right: 100px;
     display: flex;
@@ -36,7 +24,6 @@ body {
     margin-bottom: 0;
     border-radius: 30px;
     border-color: rgba(240, 248, 255, 0.633);
-    /* padding: 0; */
 }
 
 .voteIcon {
@@ -45,16 +32,12 @@ body {
     font-weight: bold;
     font-weight: 1200;
     color: rgba(240, 248, 255, 0.633);
-    /* margin-left: 10%; */
-    /* margin-left: 20%; */
 }
 
 .itemDetail {
     background-color: white;
     width: 80%;
-    /* overflow-wrap: break-word; */
     min-height: 200px;
-    /* inline-size: 150px; */
     margin-right: 40px;
     display: flex;
     flex-direction: column;
@@ -63,12 +46,10 @@ body {
 }
 
 .postItem:first-child {
-    /* background-color: pink; */
     width: 80%;
 }
 
 .postItem:last-child {
-    /* background-color: pink; */
     width: 80%;
 }
 
@@ -87,7 +68,6 @@ body {
     margin-left: 50px;
     font-size: 30px;
     text-align: left;
-    /* margin-left: -100px; */
 }
 
 .postPseudoym {
@@ -101,7 +81,6 @@ body {
     margin-left: 50px;
     font-size: 25px;
     font-family: "Times New Roman", Times, serif;
-    /* width: fit-content; */
 }
 
 .replyButton {
@@ -120,21 +99,11 @@ body {
     font-size: 18px;
     border-radius: 28px;
     margin-bottom: 20px;
-    /* justify-content: flex-end; */
 }
 
 .container {
-    /* background-color: red; */
     text-align: center;
-    /* overflow-y: auto; */
-    /* display: flex; */
-    /* justify-content: space-between; */
     overflow: auto;
     min-height: 900px;
-    /* height: 900px; */
     align-items: center;
-    /* align-items: center;
-    justify-content: center; */
-    /* display: flex;
-    flex-direction: column; */
 }
