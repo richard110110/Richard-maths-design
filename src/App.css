@@ -37,3 +37,7 @@
         transform: rotate(360deg);
     }
 }
+
+.textarea:focus {
+    boxShadow: "3px 4px 10px -2px #000000",
+}

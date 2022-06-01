@@ -1,0 +1,137 @@
+.textarea:focus {
+    boxShadow: "3px 4px 10px -2px #000000",
+}
+
+body {
+    /* margin: 0;
+    padding: 0; */
+}
+
+.postItem {
+    color: white;
+    /* background-color: yellow; */
+    width: 60%;
+    /* height: 500px; */
+    position: relative;
+    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin-top: 40px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.voteContainer {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    min-width: 25px;
+    border: 2px;
+    border-style: solid;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    border-radius: 30px;
+    border-color: rgba(240, 248, 255, 0.633);
+    /* padding: 0; */
+}
+
+.voteIcon {
+    font-size: 30px;
+    margin: auto;
+    font-weight: bold;
+    font-weight: 1200;
+    color: rgba(240, 248, 255, 0.633);
+    /* margin-left: 10%; */
+    /* margin-left: 20%; */
+}
+
+.itemDetail {
+    background-color: white;
+    width: 80%;
+    /* overflow-wrap: break-word; */
+    min-height: 200px;
+    /* inline-size: 150px; */
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+.postItem:first-child {
+    /* background-color: pink; */
+    width: 80%;
+}
+
+.postItem:last-child {
+    /* background-color: pink; */
+    width: 80%;
+}
+
+.voteNo {
+    margin-top: 0;
+    height: auto;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.postDetail {
+    float: left;
+    padding-left: 0;
+    width: 40px;
+    height: 20px;
+    margin-left: 50px;
+    font-size: 30px;
+    /* margin-left: -100px; */
+}
+
+.postPseudoym {
+    margin-top: 10px;
+    width: 100%;
+    padding-left: 0;
+    inline-size: 80%;
+    overflow-wrap: break-word;
+    text-align: left;
+    min-height: 20px;
+    margin-left: 50px;
+    font-size: 25px;
+    font-family: "Times New Roman", Times, serif;
+    /* width: fit-content; */
+}
+
+.replyButton {
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+    width: fit-content;
+    padding: 13px 40px;
+    align-items: end;
+    margin: 0px 0px 0px auto;
+    margin-right: 30px;
+    background-color: white;
+    border-color: rgb(114, 18, 240);
+    color: rgb(114, 18, 240);
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 28px;
+    /* justify-content: flex-end; */
+}
+
+.container {
+    /* background-color: red; */
+    text-align: center;
+    /* overflow-y: auto; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    overflow: auto;
+    min-height: 900px;
+    /* height: 900px; */
+    align-items: center;
+    /* align-items: center;
+    justify-content: center; */
+    /* display: flex;
+    flex-direction: column; */
+}
