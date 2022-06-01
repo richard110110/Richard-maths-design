@@ -360,14 +360,14 @@ function Home(props) {
                       columns="10"
                       id="post"
                       type="text"
-                      placeholder="Write your post ..."
+                      placeholder="Write your reply..."
                     />
                     <input
                       className={classes.inputStyle}
                       id="pseudonym"
                       type="text"
-                      text={selectPost.pseudonym}
-                      value={selectPost.pseudonym}
+                      text={selectPost.post}
+                      value={selectPost.post}
                     />
                     <button
                       type="submit"
